@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linux — Командная строка | Викторина</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="LINUX QUIZ — главная страница">
+        <div class="terminal-icon" aria-hidden="true"><span>$_</span></div>
+        <div class="book-copy">
+          <h1 class="book-title"><span>LINUX</span><span class="book-title-accent">QUIZ</span></h1>
+        </div>
+      </a>
+      <label class="quick-search"><span aria-hidden="true">⌕</span><input id="chapter-search" type="search" placeholder="Найти главу…" aria-label="Найти главу"></label>
+      <div class="header-meta">
+        <span class="meta-number" id="question-total">36</span>
+        <span>
+          <strong>глав в каталоге</strong>
+          <small><span id="ready-count">11</span> готовы к прохождению</small>
+        </span>
+      </div>
+    </header>
+
+    <section class="catalog-view" id="catalog-view">
+      <div class="catalog-hero"><div><p class="hero-tag">УЧЕБНАЯ ПЛАТФОРМА / 01—36</p><h2>Терминал —<br><em>твой инструмент.</em></h2><p>Разберись в Linux по главам. Выбирай тему, отвечай на вопросы и закрепляй знания на практике.</p></div><div class="hero-art" aria-hidden="true"><span class="art-sun"></span><span class="art-window"><b>root@linux:~</b><br>$ chmod +x skills<br>$ ./learn.sh<span class="cursor">_</span></span><span class="art-star">✳</span></div></div>
+      <div class="catalog-heading"><div><p class="eyebrow">КАТАЛОГ</p><h2>Выбери главу</h2></div><span class="catalog-count" id="catalog-count">36 тем</span></div>
+      <div class="catalog-grid" id="catalog-grid"></div>
+      <p class="no-results" id="no-results" hidden>По этому запросу главы не найдены. Попробуй другое слово.</p>
+      <footer class="catalog-footer">LINUX QUIZ <span>УЧИСЬ. ПРОБУЙ. ПОВТОРЯЙ.</span></footer>
+    </section>
+
+    <div class="learning-layout" id="learning-layout" hidden>
+      <aside class="chapter-sidebar" aria-label="Навигация по тестам">
+        <button class="back-catalog" id="catalog-back" type="button">← Все главы</button>
+        <div class="sidebar-heading">
+          <p class="eyebrow">СОДЕРЖАНИЕ</p>
+          <h2>Тесты по главам</h2>
+        </div>
+        <div class="chapter-list-scroll">
+          <nav id="chapter-list" class="chapter-list" aria-label="Главы книги"></nav>
+        </div>
+        <p class="unlock-note">Для прохождения нужно правильно ответить минимум на 80% вопросов.</p>
+      </aside>
+
+    <section class="quiz-card" id="quiz-card">
+      <div class="quiz-topline">
+        <span id="question-counter">Вопрос 1 из 10</span>
+        <span class="score-chip" id="score-chip">Счёт: 0</span>
+      </div>
+      <div class="progress-track" aria-label="Прогресс прохождения">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div id="question-area">
+        <h2 id="question-title">Что такое командная оболочка (shell)?</h2>
+        <p class="question-hint">Выбери один правильный вариант ответа.</p>
+        <div class="answers" id="answers" role="group" aria-label="Варианты ответа"></div>
+        <div class="feedback" id="feedback" aria-live="polite" hidden></div>
+      </div>
+
+      <div class="quiz-footer">
+        <button class="btn btn-secondary" id="back-btn" type="button" disabled>← <span>Назад</span></button>
+        <div class="step-dots" id="step-dots" aria-label="Номер вопроса"></div>
+        <button class="btn btn-primary" id="next-btn" type="button" disabled><span>Далее</span> →</button>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span><span class="status-dot"></span> Учебный режим</span>
+      <span>Основы работы в терминале Linux</span>
+    </footer>
+    </div>
+  </main>
+  <script src="data/catalog.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
