@@ -376,11 +376,14 @@ function showResults() {
   const description = passedNow
     ? "Ты успешно завершил этот тест. Можно выбрать любую главу с вопросами в списке слева."
     : `Нужно минимум ${passScore} правильных ответов. Попробуй ещё раз.`;
+  const practiceBlock = activeChapter.title === "Глава 12. Плавное введение в vi"
+    ? `<aside class="practice-cta" aria-labelledby="practice-cta-title"><h3 id="practice-cta-title">Хочешь прокачать навыки работы с vi?</h3><p>Закрепи знания на практике в интерактивном тренажёре Vim Legends. Изучай команды vi/vim и тренируйся прямо в браузере</p><a class="practice-cta-link" href="https://vimlegends.com/" target="_blank" rel="noopener noreferrer">Перейти к тренажёру vi →</a></aside>`
+    : "";
 
   counter.textContent = "Тест завершён";
   scoreChip.textContent = `${percent}%`;
   progressFill.style.width = "100%";
-  questionArea.innerHTML = `<div class="result-view" data-passed="${passedNow}"><div class="result-icon">${passedNow ? "✓" : "↻"}</div><div class="question-kicker">${activeChapter.title} · ${passedNow ? "ТЕСТ ПРОЙДЕН" : "НУЖНА ЕЩЁ ОДНА ПОПЫТКА"}</div><h2>${heading}</h2><p></p><div class="result-score">${score}<span> / ${total}</span></div><div class="result-bar"><div style="width:${percent}%"></div></div><p>Правильных ответов: ${score}<br>Ошибок: ${total - score}<br>Результат: ${percent}% · проходной балл: ${passScore}/${total} (80%)</p><div class="result-actions"><button class="btn btn-primary" id="retry-btn" type="button">Пройти ещё раз ↻</button><button class="btn btn-secondary" id="review-btn" type="button">Разобрать ответы</button><button class="btn btn-secondary" id="results-catalog-btn" type="button">К каталогу</button></div></div>`;
+  questionArea.innerHTML = `<div class="result-view" data-passed="${passedNow}"><div class="result-icon">${passedNow ? "✓" : "↻"}</div><div class="question-kicker">${activeChapter.title} · ${passedNow ? "ТЕСТ ПРОЙДЕН" : "НУЖНА ЕЩЁ ОДНА ПОПЫТКА"}</div><h2>${heading}</h2><p></p><div class="result-score">${score}<span> / ${total}</span></div><div class="result-bar"><div style="width:${percent}%"></div></div><p>Правильных ответов: ${score}<br>Ошибок: ${total - score}<br>Результат: ${percent}% · проходной балл: ${passScore}/${total} (80%)</p>${practiceBlock}<div class="result-actions"><button class="btn btn-primary" id="retry-btn" type="button">Пройти ещё раз ↻</button><button class="btn btn-secondary" id="review-btn" type="button">Разобрать ответы</button><button class="btn btn-secondary" id="results-catalog-btn" type="button">К каталогу</button></div></div>`;
   questionArea.querySelector(".result-view > p").textContent = description;
   backButton.hidden = true;
   nextButton.hidden = true;
