@@ -81,6 +81,11 @@ window.LINUX_QUIZ_CATALOG = Array.from({ length: 36 }, (_, index) => {
     number: 14,
     title: "Глава 14. Управление пакетами",
     file: "data/chapter-14.js"
+  },
+  {
+    number: 15,
+    title: "Глава 15. Устройства хранения",
+    file: "data/chapter-15.js"
   }
 ].forEach((chapter) => {
   window.LINUX_QUIZ_CATALOG[chapter.number - 1] = chapter;
